@@ -3,7 +3,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
     </div>
   <!--logo start-->
-  <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+  <a href="{{ route('dashboard') }}" class="logo"><b>DASHGUM FREE</b></a>
   <!--logo end-->
   <div class="nav notify-row" id="top_menu">
       <!--  notification start -->
@@ -146,18 +146,12 @@
       <!--  notification end -->
   </div>
   <div class="top-menu">
-
-
-      <ul class="nav pull-right top-menu">
+    <ul class="nav pull-right top-menu">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-          <li><a class="logout"  href="{{ route('logout') }}" onclick="event.preventDefault();
+            <li><a class="logout"  href="{{ route('logout') }}" onclick="event.preventDefault();
             this.closest('form').submit(); " role="button">Logout</a></li>
         </form>
-      </ul>
-
-
-
-       
+    </ul>
   </div>
 </header>
