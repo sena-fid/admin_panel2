@@ -2240,4 +2240,16 @@ label {
     min-height: 900px;
 }
 
+.table-mt{
 
+    margin-top: 10px;
+}
+
+.bottom{
+    margin-bottom: 40px !important;
+}
+
+.right{
+
+    float: right;
+}

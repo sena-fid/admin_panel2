@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\PageController;
+use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Frontend\IndexController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,8 +24,24 @@ Route::get('/', [IndexController::class, 'index'])->name('index');
 
 Route::middleware([ 'auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
    
-   
    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+
+   Route::prefix('page')->name('page.')->group(function () {
+      Route::get('/', [PageController::class, 'index'])->name('index');
+      Route::get('/create', [PageController::class, 'create'])->name('create');
+      Route::post('/store', [PageController::class, 'store'])->name('store');
+      // Route::post('/update', [PageController::class, 'update'])->name('update');
+      // Route::get('/destroy/{page}', [PageController::class, 'destroy'])->name('destroy');
+  });
+
+
+  
+  Route::prefix('menu')->name('menuu.')->group(function () {
+   Route::get('/', [MenuController::class, 'index'])->name('index');
+   // Route::post('/store', [MenuController::class, 'store'])->name('store');
+   // Route::post('/update', [MenuController::class, 'update'])->name('update');
+   // Route::get('/destroy/{page}', [MenuController::class, 'destroy'])->name('destroy');
+});
 
     
 });

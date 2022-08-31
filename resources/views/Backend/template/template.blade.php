@@ -18,6 +18,8 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style-responsive.css') }}" rel="stylesheet">
     <script src="{{ asset('assets/js/chart-master/Chart.js') }}"></script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+
   </head>
 
   <body>
@@ -49,7 +51,7 @@
     <script src="{{ asset('assets/js/sparkline-chart.js') }}"></script>    
 	<script src="{{ asset('assets/js/zabuto_calendar.js') }}"></script>	
 	
-	<script type="text/javascript">
+	{{-- <script type="text/javascript">
         $(document).ready(function () {
         var unique_id = $.gritter.add({
             // (string | mandatory) the heading of the notification
@@ -68,7 +70,7 @@
 
         return false;
         });
-	</script>
+	</script> --}}
 	
 	<script type="application/javascript">
         $(document).ready(function () {
@@ -104,6 +106,7 @@
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
     </script>
+    @yield('js')
   </body>
 </html>
 
